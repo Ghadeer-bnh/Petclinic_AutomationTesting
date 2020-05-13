@@ -14,6 +14,7 @@ public class EditOwnerPage extends Page {
     private final String UPDATED_PHONE_NUM="11111";
     private final String Plane_String=" ";
     private final String UPDATE_BUTTON="body > app-root > app-owner-edit > div > div > form > div:nth-child(7) > div > button:nth-child(2)";
+    private final String SYMBOLS_AND_NUMBERS="1123##";
 
     public EditOwnerPage(WebDriver driver){
         super("Edit Owner", driver);
@@ -59,7 +60,13 @@ public void enterInvalidTelephone(){
 
         return !isElementEnabled(UPDATE_BUTTON);
     }
-
+    public void enterSymbolsAndNumbers(){
+        fill(FIRST_NAME_SELECTOR,SYMBOLS_AND_NUMBERS);
+        fill(LAST_NAME_SELECTOR,SYMBOLS_AND_NUMBERS);
+        fill(ADDRESS_SELECTOR,SYMBOLS_AND_NUMBERS);
+        fill(CITY_SELECTOR,SYMBOLS_AND_NUMBERS);
+        fill(TELEPHONE_SELECTOR,UPDATED_PHONE_NUM);
+    }
 
 }
 
